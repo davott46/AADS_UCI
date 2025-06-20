@@ -1,0 +1,18 @@
+Log reg best parameter
+
+# hyper-parameter grid for tuning
+logreg_param_grid = [
+    # For l1 and l2: excludes l1_ratio
+    {
+        'classifier__penalty': ['l1', 'l2'],
+        'classifier__C': [0.1, 0.15, 0.3],
+        'classifier__class_weight': [None, 'balanced']
+    },
+    # For elasticnet: includes l1_ratio
+    {
+        'classifier__penalty': ['elasticnet'],
+        'classifier__C': [0.1, 0.15, 0.3],
+        'classifier__class_weight': [None, 'balanced'],
+        'classifier__l1_ratio': [0.3, 0.35, 0.4]
+    }
+]
